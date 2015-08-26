@@ -7,7 +7,7 @@ A simple program to count the
 [SLOC](https://en.wikipedia.org/wiki/Source_lines_of_code) for
 [Go](http://golang.org) code.
 
-#### Usage
+#### Example
 
     $ find . -name *.go ! -name '*_test.go' | go-sloc
     213
