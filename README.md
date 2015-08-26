@@ -9,6 +9,6 @@ A simple program to count the
 
 #### Example
 
-    $ find . -name *.go ! -name '*_test.go' -exec cat {} \; | go-sloc.go
+    $ find . -name *.go ! -name '*_test.go' -exec cat {} \; | go-sloc
     40
 
