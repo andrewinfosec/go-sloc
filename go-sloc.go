@@ -9,6 +9,11 @@ import (
 )
 
 func main() {
+	const (
+		COMMENT_LINE  string = `^\/\/`
+		COMMENT_BEGIN string = `^\/\*`
+		COMMENT_END   string = `^\*\/`
+	)
 	var (
 		c         int  = 0
 		inComment bool = false
@@ -19,7 +24,7 @@ func main() {
 		s := strings.TrimSpace(scanner.Text())
 
 		if inComment == true {
-			if match, _ := regexp.MatchString(`^\*\/`, s); match {
+			if match, _ := regexp.MatchString(COMMENT_END, s); match {
 				inComment = false
 			}
 			continue
@@ -28,10 +33,10 @@ func main() {
 		if s == "" {
 			continue
 		}
-		if match, _ := regexp.MatchString(`^\/\/`, s); match {
+		if match, _ := regexp.MatchString(COMMENT_LINE, s); match {
 			continue
 		}
-		if match, _ := regexp.MatchString(`^\/\*`, s); match {
+		if match, _ := regexp.MatchString(COMMENT_BEGIN, s); match {
 			inComment = true
 			continue
 		}
