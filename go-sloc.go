@@ -29,7 +29,6 @@ func main() {
 			}
 			continue
 		}
-
 		if s == "" {
 			continue
 		}
