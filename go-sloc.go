@@ -10,9 +10,13 @@ import (
 
 func main() {
 	const (
-		COMMENT_LINE  string = `^\/\/`
-		COMMENT_BEGIN string = `^\/\*`
-		COMMENT_END   string = `^\*\/`
+		REGEX_LINE  string = `\/\/` // //
+		REGEX_BEGIN string = `\/\*` // /*
+		REGEX_END   string = `\*\/` // */
+
+		COMMENT_LINE  string = "^" + REGEX_LINE
+		COMMENT_BEGIN string = "^" + REGEX_BEGIN
+		COMMENT_END   string = "^" + REGEX_END
 	)
 	var (
 		c         int  = 0
@@ -36,7 +40,9 @@ func main() {
 			continue
 		}
 		if match, _ := regexp.MatchString(COMMENT_BEGIN, s); match {
-			inComment = true
+			if match, _ := regexp.MatchString(REGEX_END, s); !match {
+				inComment = true
+			}
 			continue
 		}
 		c++
