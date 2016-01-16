@@ -27,13 +27,13 @@ func main() {
 	for scanner.Scan() {
 		s := strings.TrimSpace(scanner.Text())
 
+		if s == "" {
+			continue
+		}
 		if inComment == true {
 			if match, _ := regexp.MatchString(COMMENT_END, s); match {
 				inComment = false
 			}
-			continue
-		}
-		if s == "" {
 			continue
 		}
 		if match, _ := regexp.MatchString(COMMENT_LINE, s); match {
