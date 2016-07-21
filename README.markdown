@@ -9,8 +9,8 @@ A simple program to count the
 
 #### Example usage
 
-    $ go-sloc < '*.go'
-    40
+    $ go run go-sloc.go < go-sloc.go 
+    51
 
     $ find . -name '*.go' ! -name '*_test.go' -exec cat {} \; | go-sloc
     423

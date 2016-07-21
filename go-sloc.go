@@ -3,6 +3,7 @@ package main
 import (
 	"bufio"
 	"fmt"
+	"log"
 	"os"
 	"regexp"
 	"strings"
@@ -10,13 +11,13 @@ import (
 
 func main() {
 	const (
-		REGEX_LINE  string = `\/\/` // //
-		REGEX_BEGIN string = `\/\*` // /*
-		REGEX_END   string = `\*\/` // */
+		REGEX_LINE  = `\/\/` // //
+		REGEX_BEGIN = `\/\*` // /*
+		REGEX_END   = `\*\/` // */
 
-		COMMENT_LINE  string = "^" + REGEX_LINE
-		COMMENT_BEGIN string = "^" + REGEX_BEGIN
-		COMMENT_END   string = "^" + REGEX_END
+		COMMENT_LINE  = "^" + REGEX_LINE
+		COMMENT_BEGIN = "^" + REGEX_BEGIN
+		COMMENT_END   = "^" + REGEX_END
 	)
 	var (
 		c         int  = 0
@@ -50,7 +51,7 @@ func main() {
 	fmt.Println(c)
 
 	if err := scanner.Err(); err != nil {
-		fmt.Fprintln(os.Stderr, "error:", err)
+		log.Print(err)
 		os.Exit(1)
 	}
 }
