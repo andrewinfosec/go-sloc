@@ -1,5 +1,5 @@
 
-### go-sloc: Count SLOC for Go/golang code
+### go-sloc: Count SLOC for Go code
 
 By Andrew Stewart ([http://andrewinfosec.com](http://andrewinfosec.com))
 
