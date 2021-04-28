@@ -1,7 +1,7 @@
 
 ### go-sloc: Count SLOC for Go code
 
-By Andrew Stewart ([http://andrewinfosec.com](http://andrewinfosec.com))
+By Andrew Stewart ([https://andrewinfosec.com](https://andrewinfosec.com))
 
 A simple program to count the
 [SLOC](https://en.wikipedia.org/wiki/Source_lines_of_code) for
